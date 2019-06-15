@@ -6,7 +6,7 @@ package com.app
 class App {
     val greeting: String
         get() {
-            return "Hello world."
+            return "Hello kotlin."
         }
 }
 

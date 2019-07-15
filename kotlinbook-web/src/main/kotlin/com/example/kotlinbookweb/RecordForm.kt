@@ -1,10 +1,7 @@
 package com.example.kotlinbookweb
 
-import javafx.beans.property.IntegerPropertyBase
 import lombok.Data
-import lombok.ToString
 import java.util.Date
-import javax.validation.constraints.Null
 
 @Data
 class RecordForm{

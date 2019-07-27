@@ -1,7 +1,10 @@
-var myVueApp = new Vue({
-    el:"#list-group-item"
+var topVue = new Vue({
+    el:"#tsukeru"
+    ,data:{
+        
+    }
     ,methods:{
-        tsukeru:function(){
+        openModal:function(){
             alert('家計簿をつけるのかい？')
         }
         

@@ -6,7 +6,7 @@
     <title>top</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -14,9 +14,8 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-    <script th:src="@{/webjars/vue/2.5.3-1/vue.js}"></script>
-    <script th:src="@{/webjars/jquery/1.11.1/jquery.min.js}"></script>
+        crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap" rel="stylesheet">
 </head>
 
@@ -30,33 +29,34 @@
             <div class="col-lg-3">
                 <ul class="list-group">
                     <li class="list-group-item active">家計簿</li>
-                    <form name="record" action="#" th:action="@{/record}" th:object="${recordForm}" method="post">
-                        <input type="hidden" name="recordTime" th:value="${#dates.format(#dates.createNow(), 'yyyy/MM/dd HH:mm:ss')}"/>
-                    <input type="hidden" name="consume" th:value="${true}"/>
-                    <input type="hidden" name="price" th:value="${100}"/>
-                    <div class="list-group-item" onclick="alert('家計簿をつけるのかい？');">つける</div>
+                    <!--                    <form name="record" action="#" th:action="@{/record}" th:object="${recordForm}" method="post">-->
+                    <!--                        <input type="hidden" name="recordTime" th:value="${#dates.format(#dates.createNow(), 'yyyy/MM/dd HH:mm:ss')}"/>-->
+                    <!--                    <input type="hidden" name="consume" th:value="${true}"/>-->
+                    <!--                    <input type="hidden" name="price" th:value="${100}"/>-->
+                    <div class="list-group-item">
+                        <button id="tsukeru" v-on:click="openModal">つける</button></div>
                     <!--<a href="javascript:void(0)" onclick="document.record.submit(); return false;" class="list-group-item">つける</a>-->
-                </form>
-                <li class="list-group-item">変える</li>
-                <li class="list-group-item">取り消す</li>
-            </ul>
-            <ul class="list-group">
-                <li class="list-group-item active">振り返り</li>
-                <li class="list-group-item">統計データ</li>
-                <li class="list-group-item">特に多い出費</li>
-            </ul>
-        </div>
+                    <!--                </form>-->
+                    <li class="list-group-item">変える</li>
+                    <li class="list-group-item">取り消す</li>
+                </ul>
+                <ul class="list-group">
+                    <li class="list-group-item active">振り返り</li>
+                    <li class="list-group-item">統計データ</li>
+                    <li class="list-group-item">特に多い出費</li>
+                </ul>
+            </div>
 
-        <div class="col-lg-9">
-            <div class="jumbotron">
-                <h1 class="display-4">カレンダー</h1>
-                <h1 class="display-4" align="center">ガンバッテ</h1>
-                <h1 class="display-4" align="right">ツクル</h1>
+            <div class="col-lg-9">
+                <div class="jumbotron">
+                    <h1 class="display-4">カレンダー</h1>
+                    <h1 class="display-4" align="center">ガンバッテ</h1>
+                    <h1 class="display-4" align="right">ツクル</h1>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
+    <script th:src="@{/js/top.js}"></script>
 </body>
-<script th:src="@{/top.js}"></script>
+
 </html>
